@@ -907,6 +907,60 @@ img {
     url('assets/images/story-awareness.jpg');
 }
 
+.story-card-visual.palliative {
+  background-image:
+    linear-gradient(135deg, rgba(20, 38, 54, 0.64) 0%, rgba(33, 60, 86, 0.5) 60%, rgba(91, 125, 157, 0.28) 100%),
+    url('assets/images/story-palliative.jpg');
+}
+
+.story-card-visual.pharmacy {
+  background-image:
+    linear-gradient(135deg, rgba(36, 30, 52, 0.64) 0%, rgba(58, 43, 84, 0.5) 60%, rgba(110, 86, 152, 0.3) 100%),
+    url('assets/images/story-pharmacy.jpg');
+}
+
+.story-card-visual.rehabilitation {
+  background-image:
+    linear-gradient(135deg, rgba(31, 54, 38, 0.62) 0%, rgba(48, 84, 60, 0.5) 60%, rgba(120, 152, 96, 0.3) 100%),
+    url('assets/images/story-rehab.jpg');
+}
+
+.story-card-visual.education {
+  background-image:
+    linear-gradient(135deg, rgba(52, 44, 25, 0.62) 0%, rgba(86, 72, 39, 0.5) 60%, rgba(170, 136, 66, 0.28) 100%),
+    url('assets/images/story-education.jpg');
+}
+
+.story-card-visual.walker {
+  background-image:
+    linear-gradient(135deg, rgba(33, 44, 62, 0.64) 0%, rgba(52, 72, 102, 0.5) 60%, rgba(112, 142, 180, 0.28) 100%),
+    url('assets/images/story-walker.jpg');
+}
+
+.story-card-visual.gettogether {
+  background-image:
+    linear-gradient(135deg, rgba(50, 31, 28, 0.62) 0%, rgba(86, 50, 42, 0.5) 60%, rgba(145, 92, 75, 0.3) 100%),
+    url('assets/images/story-gettogether.jpg');
+}
+
+.story-card-visual.rural {
+  background-image:
+    linear-gradient(135deg, rgba(38, 55, 33, 0.62) 0%, rgba(56, 84, 46, 0.5) 60%, rgba(128, 164, 98, 0.3) 100%),
+    url('assets/images/story-rural-clinic.jpg');
+}
+
+.story-card-visual.socialwork {
+  background-image:
+    linear-gradient(135deg, rgba(28, 45, 62, 0.62) 0%, rgba(46, 68, 90, 0.5) 60%, rgba(98, 132, 162, 0.28) 100%),
+    url('assets/images/story-social-work.jpg');
+}
+
+.story-card-visual.startup {
+  background-image:
+    linear-gradient(135deg, rgba(45, 39, 20, 0.62) 0%, rgba(76, 63, 33, 0.5) 60%, rgba(150, 122, 66, 0.3) 100%),
+    url('assets/images/story-startup.jpg');
+}
+
 .story-card-visual-label {
   position: absolute;
   bottom: 20px;
@@ -1018,6 +1072,59 @@ img {
   height: auto;
 }
 
+.team-founder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 0 auto 46px;
+  max-width: 560px;
+  text-align: center;
+}
+
+.team-founder-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 1 / 1;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.team-founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 76% center;
+}
+
+.team-founder-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.team-founder-role {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.team-founder-org {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
 .team-group-label {
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;
@@ -1027,6 +1134,7 @@ img {
   color: var(--gold);
   margin-bottom: 28px;
   margin-top: 56px;
+  text-align: center;
 }
 
 .team-group-label:first-of-type {
@@ -1035,7 +1143,8 @@ img {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center;
   gap: 20px;
   margin-bottom: 16px;
 }
@@ -1046,6 +1155,7 @@ img {
   padding: 28px 24px;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .team-card:hover {
@@ -1065,7 +1175,7 @@ img {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
 }
 
 .team-card h4 {
@@ -1091,6 +1201,7 @@ img {
 .team-advisors-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -1446,15 +1557,22 @@ body.modal-open {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 32px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .footer-bottom p {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.35);
+}
+
+.footer-bottom-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .footer-social {
@@ -1481,6 +1599,38 @@ body.modal-open {
   width: 16px;
   height: 16px;
   fill: rgba(255,255,255,0.6);
+}
+
+.footer-credit-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-credit-row p {
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-credit-row a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer-credit-row a:hover {
+  background: rgba(10, 102, 194, 0.75);
+}
+
+.footer-credit-row a svg {
+  width: 14px;
+  height: 14px;
+  fill: rgba(255,255,255,0.9);
 }
 
 /* ==================== ANIMATIONS ==================== */
@@ -1606,12 +1756,32 @@ body.modal-open {
   }
 
   .footer-bottom {
-    flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+
+  .footer-bottom-main {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer-credit-row {
+    justify-content: center;
   }
 
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-founder {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .team-founder-photo {
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .gallery-modal {
@@ -1931,7 +2101,7 @@ body.modal-open {
     <div class="stories-header fade-in">
       <div class="section-label">On the Ground</div>
       <h2 class="section-heading">What This Looks Like in Practice</h2>
-      <p class="section-subtext">Beyond the numbers — these are the programs our volunteers carry out in the wards, homes, and communities around JNMC.</p>
+      <p class="section-subtext">Beyond the numbers &mdash; these are the programs our volunteers carry out in the wards, homes, and communities around JNMC.</p>
     </div>
     <div class="stories-grid">
       <div class="story-card fade-in" data-gallery="ramadan" tabindex="0" role="button" aria-label="Open Ramadan Drive photo gallery">
@@ -1940,7 +2110,7 @@ body.modal-open {
         </div>
         <div class="story-card-body">
           <h3>Ramadan Drive</h3>
-          <p>During each Ramadan, our Aligarh-based volunteers prepare and deliver ration kits directly to the bedsides of patients and their families at JNMC. These include food staples, supplies for iftar, and daily necessities — because a family keeping vigil in a hospital corridor still needs to eat.</p>
+          <p>During each Ramadan, our Aligarh-based volunteers prepare and deliver ration kits directly to the bedsides of patients and their families at JNMC. These include food staples, supplies for iftar, and daily necessities &mdash; because a family keeping vigil in a hospital corridor still needs to eat.</p>
           <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
@@ -1950,7 +2120,7 @@ body.modal-open {
         </div>
         <div class="story-card-body">
           <h3>Winter Drive</h3>
-          <p>Aligarh winters are unforgiving — especially for patients weakened by treatment and families sleeping on hospital floors. Our Winter Drive provides blankets, shawls, and warm clothing to patients and caregivers who would otherwise face the cold without protection.</p>
+          <p>Aligarh winters are unforgiving &mdash; especially for patients weakened by treatment and families sleeping on hospital floors. Our Winter Drive provides blankets, shawls, and warm clothing to patients and caregivers who would otherwise face the cold without protection.</p>
           <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
@@ -1960,7 +2130,97 @@ body.modal-open {
         </div>
         <div class="story-card-body">
           <h3>Cancer Awareness Camps</h3>
-          <p>In collaboration with AMU's Department of Social Work and local clinics in Barabanki and surrounding rural areas, we've conducted 15+ breast cancer awareness sessions. Early detection saves lives — and in communities where cancer is often diagnosed late, awareness is its own form of care.</p>
+          <p>In collaboration with AMU's Department of Social Work and local clinics in Barabanki and surrounding rural areas, we've conducted 15+ breast cancer awareness sessions. Early detection saves lives &mdash; and in communities where cancer is often diagnosed late, awareness is its own form of care.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in fade-in-delay-3" data-gallery="palliative" tabindex="0" role="button" aria-label="Open Palliative and end-of-life care photo gallery">
+        <div class="story-card-visual palliative">
+          <div class="story-card-visual-label">Hospital Care</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Palliative &amp; End-of-Life Care</h3>
+          <p>AligsCare funded a 4-bed Palliative Care Unit at JNMC, opened on January 17, 2023, to support critically ill patients and their families with comfort-focused care.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in fade-in-delay-4" data-gallery="pharmacy" tabindex="0" role="button" aria-label="Open free pharmacy support photo gallery">
+        <div class="story-card-visual pharmacy">
+          <div class="story-card-visual-label">Medical Support</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Free Pharmacy Support</h3>
+          <p>Through the AligsCare Pharmacy at JNMC, medications are provided at no cost to cancer patients in treatment, reducing delays when families cannot afford prescriptions.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in fade-in-delay-5" data-gallery="education" tabindex="0" role="button" aria-label="Open kids educational support photo gallery">
+        <div class="story-card-visual education">
+          <div class="story-card-visual-label">Family Support</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Kids Educational Support</h3>
+          <p>School fee support and educational materials help children of patients stay in school while families navigate treatment and income loss.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="walker" tabindex="0" role="button" aria-label="Open walker giveaways photo gallery">
+        <div class="story-card-visual walker">
+          <div class="story-card-visual-label">Recovery Support</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Walker Giveaways</h3>
+          <p>Assistive mobility support is provided to recovering patients so they can continue treatment and daily movement with greater dignity and safety.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="gettogether" tabindex="0" role="button" aria-label="Open patient get-togethers and remission celebrations photo gallery">
+        <div class="story-card-visual gettogether">
+          <div class="story-card-visual-label">Community Care</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Patient Get-Togethers &amp; Remission Celebrations</h3>
+          <p>Group gatherings bring patients and families together for support, reflection, and moments of encouragement through and beyond treatment.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="rural" tabindex="0" role="button" aria-label="Open rural clinic partnerships photo gallery">
+        <div class="story-card-visual rural">
+          <div class="story-card-visual-label">Rural Outreach</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Rural Clinic Partnerships</h3>
+          <p>Partnerships with local clinics extend awareness, screening, and follow-up support into communities that are far from tertiary hospitals.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="socialwork" tabindex="0" role="button" aria-label="Open social work department collaboration photo gallery">
+        <div class="story-card-visual socialwork">
+          <div class="story-card-visual-label">Institutional Collaboration</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Social Work Department Collaboration</h3>
+          <p>Programs are carried out with Department of Social Work collaboration to strengthen patient outreach, counseling, and community mobilization.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="startup" tabindex="0" role="button" aria-label="Open startup capital support photo gallery">
+        <div class="story-card-visual startup">
+          <div class="story-card-visual-label">Economic Recovery</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Startup Capital for Recovering Patients</h3>
+          <p>Small livelihood support helps patients in recovery restart income through micro-business setups and practical, community-level support.</p>
+          <div class="story-card-action">View photo gallery</div>
+        </div>
+      </div>
+      <div class="story-card fade-in" data-gallery="rehabilitation" tabindex="0" role="button" aria-label="Open rehabilitation and economic empowerment photo gallery">
+        <div class="story-card-visual rehabilitation">
+          <div class="story-card-visual-label">Recovery Support</div>
+        </div>
+        <div class="story-card-body">
+          <h3>Rehabilitation &amp; Economic Empowerment</h3>
+          <p>AligsCare supports rehabilitation of patients in remission through economic empowerment and livelihood support so families can rebuild after treatment.</p>
           <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
@@ -1976,14 +2236,18 @@ body.modal-open {
       <h2 class="section-heading">The Full Scope of What We Do</h2>
     </div>
     <div class="programs-tags fade-in">
+      <span class="program-tag">Ramadan Drive</span>
+      <span class="program-tag">Winter Drive</span>
+      <span class="program-tag">Cancer Awareness Camps</span>
+      <span class="program-tag">Palliative &amp; End-of-Life Care</span>
+      <span class="program-tag">Free Pharmacy Support</span>
       <span class="program-tag">Kids Educational Support</span>
       <span class="program-tag">Walker Giveaways</span>
-      <span class="program-tag">Rehabilitation &amp; Economic Empowerment</span>
-      <span class="program-tag">Patient Get-Togethers</span>
-      <span class="program-tag">Remission Celebrations</span>
+      <span class="program-tag">Patient Get-Togethers &amp; Remission Celebrations</span>
       <span class="program-tag">Rural Clinic Partnerships</span>
       <span class="program-tag">Social Work Department Collaboration</span>
       <span class="program-tag">Startup Capital for Recovering Patients</span>
+      <span class="program-tag">Rehabilitation &amp; Economic Empowerment</span>
     </div>
   </div>
 </section>
@@ -2000,27 +2264,33 @@ body.modal-open {
       <img src="assets/images/team-feature.jpg" alt="AligsCare leadership and local partners in a program planning meeting at Aligarh." loading="lazy">
     </div>
 
+    <div class="team-group-label fade-in">Founder</div>
+    <div class="team-founder fade-in">
+      <div class="team-founder-photo">
+        <img src="assets/images/founder-samina.jpg" alt="Headshot portrait of Dr. Samina Salim." loading="lazy">
+      </div>
+      <div class="team-founder-content">
+        <h3>Dr. Samina Salim, PhD</h3>
+        <div class="team-founder-role">Founder &amp; President</div>
+        <div class="team-founder-org">Associate Professor, University of Houston</div>
+      </div>
+    </div>
+
     <div class="team-group-label fade-in">Board of Directors</div>
     <div class="team-grid">
       <div class="team-card fade-in">
-        <div class="team-card-initial">SS</div>
-        <h4>Dr. Samina Salim, PhD</h4>
-        <div class="team-role">President &amp; Founder</div>
-        <div class="team-org">Associate Professor, University of Houston</div>
-      </div>
-      <div class="team-card fade-in fade-in-delay-1">
         <div class="team-card-initial">AA</div>
         <h4>Dr. Aftab Ahmad, PhD</h4>
         <div class="team-role">Director</div>
         <div class="team-org">Associate Professor, University of Alabama, Birmingham</div>
       </div>
-      <div class="team-card fade-in fade-in-delay-2">
+      <div class="team-card fade-in fade-in-delay-1">
         <div class="team-card-initial">SH</div>
         <h4>Dr. Shahid Hussain, PhD</h4>
         <div class="team-role">Director</div>
         <div class="team-org">Associate Professor, Medical University of South Carolina</div>
       </div>
-      <div class="team-card fade-in fade-in-delay-3">
+      <div class="team-card fade-in fade-in-delay-2">
         <div class="team-card-initial">TA</div>
         <h4>Tufail Ahmad</h4>
         <div class="team-role">Director</div>
@@ -2028,7 +2298,7 @@ body.modal-open {
       </div>
     </div>
 
-    <div class="team-group-label fade-in">Site Team — Aligarh</div>
+    <div class="team-group-label fade-in">Site Team &mdash; Aligarh</div>
     <div class="team-grid">
       <div class="team-card fade-in">
         <div class="team-card-initial" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">SZ</div>
@@ -2149,10 +2419,20 @@ body.modal-open {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2018&ndash;2026 AligsCare. All rights reserved. EIN: 83-1564915. 501(c)(3) Non-Profit registered in Texas.</p>
-      <div class="footer-social">
-        <a href="mailto:aligscare@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>
+      <div class="footer-bottom-main">
+        <p>&copy; 2018&ndash;2026 AligsCare. All rights reserved. EIN: 83-1564915. 501(c)(3) Non-Profit registered in Texas.</p>
+        <div class="footer-social">
+          <a href="mailto:aligscare@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-credit-row">
+        <p>Site designed and managed by Rehan Rizvi.</p>
+        <a href="https://linkedin.com/in/r-rizvi/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3.06a1.97 1.97 0 100 3.94 1.97 1.97 0 000-3.94zM20.44 13.42c0-3.45-1.84-5.05-4.3-5.05-1.98 0-2.87 1.09-3.37 1.86V8.5H9.38V20h3.38v-6.39c0-.34.02-.68.12-.92.27-.68.88-1.39 1.9-1.39 1.34 0 1.88 1.02 1.88 2.51V20h3.38v-6.58z"/>
+          </svg>
         </a>
       </div>
     </div>
@@ -2292,6 +2572,82 @@ const impactGalleries = {
       { src: 'assets/images/galleries/awareness/awareness-5.jpg', alt: 'Attendees seated for awareness programming under event canopy.' },
       { src: 'assets/images/galleries/awareness/awareness-6.jpg', alt: 'Indoor awareness meeting with community participants.' }
     ]
+  },
+  palliative: {
+    title: 'Palliative & End-of-Life Care',
+    images: [
+      { src: 'assets/images/galleries/palliative/palliative-1.jpg', alt: 'Palliative Care Unit at JNMC supported by AligsCare.' },
+      { src: 'assets/images/galleries/palliative/palliative-2.jpg', alt: 'Hospital room in the AligsCare-supported palliative care unit.' },
+      { src: 'assets/images/galleries/palliative/palliative-3.jpg', alt: 'Critically ill patient receiving support within the palliative care ward.' }
+    ]
+  },
+  pharmacy: {
+    title: 'Free Pharmacy Support',
+    images: [
+      { src: 'assets/images/galleries/pharmacy/pharmacy-1.jpg', alt: 'AligsCare Pharmacy stock area at JNMC.' },
+      { src: 'assets/images/galleries/pharmacy/pharmacy-2.jpg', alt: 'Medications prepared for cancer patient support.' },
+      { src: 'assets/images/galleries/pharmacy/pharmacy-3.jpg', alt: 'AligsCare and partners during pharmacy support activity.' }
+    ]
+  },
+  education: {
+    title: 'Kids Educational Support',
+    images: [
+      { src: 'assets/images/galleries/education/education-1.jpg', alt: 'Student receiving educational support material through AligsCare.' },
+      { src: 'assets/images/galleries/education/education-2.jpg', alt: 'Children and family members with education assistance resources.' },
+      { src: 'assets/images/galleries/education/education-3.jpg', alt: 'Educational sponsorship support shared with a patient family.' },
+      { src: 'assets/images/galleries/education/education-4.jpg', alt: 'Volunteer documenting children education support distribution.' },
+      { src: 'assets/images/galleries/education/education-5.jpg', alt: 'Family beneficiaries with educational aid provided by AligsCare.' }
+    ]
+  },
+  walker: {
+    title: 'Walker Giveaways',
+    images: [
+      { src: 'assets/images/galleries/walker/walker-1.jpg', alt: 'Walker assistance provided to a recovering patient.' },
+      { src: 'assets/images/galleries/walker/walker-2.jpg', alt: 'Mobility support distribution for patient rehabilitation.' }
+    ]
+  },
+  gettogether: {
+    title: 'Patient Get-Togethers & Remission Celebrations',
+    images: [
+      { src: 'assets/images/galleries/gettogether/gettogether-1.jpg', alt: 'Patient and family gathering organized by AligsCare volunteers.' },
+      { src: 'assets/images/galleries/gettogether/gettogether-2.jpg', alt: 'Community meeting for patients in and beyond treatment.' },
+      { src: 'assets/images/galleries/gettogether/gettogether-3.jpg', alt: 'Supportive group event with patient families and volunteers.' },
+      { src: 'assets/images/galleries/gettogether/gettogether-4.jpg', alt: 'Participants at a patient get-together and encouragement session.' }
+    ]
+  },
+  rural: {
+    title: 'Rural Clinic Partnerships',
+    images: [
+      { src: 'assets/images/galleries/rural-clinics/rural-1.jpg', alt: 'Rural clinic collaboration activity with AligsCare team members.' },
+      { src: 'assets/images/galleries/rural-clinics/rural-2.jpg', alt: 'Community outreach setup in a rural clinic partnership area.' },
+      { src: 'assets/images/galleries/rural-clinics/rural-3.jpg', alt: 'Rural awareness and support engagement facilitated by volunteers.' },
+      { src: 'assets/images/galleries/rural-clinics/rural-4.jpg', alt: 'Group session during a rural clinic partnership visit.' }
+    ]
+  },
+  socialwork: {
+    title: 'Social Work Department Collaboration',
+    images: [
+      { src: 'assets/images/galleries/social-work/social-1.jpg', alt: 'Program activity coordinated with the Department of Social Work.' },
+      { src: 'assets/images/galleries/social-work/social-2.jpg', alt: 'Community support engagement with social work collaborators.' },
+      { src: 'assets/images/galleries/social-work/social-3.jpg', alt: 'Volunteer and social work team participation in outreach.' }
+    ]
+  },
+  startup: {
+    title: 'Startup Capital for Recovering Patients',
+    images: [
+      { src: 'assets/images/galleries/startup/startup-1.jpg', alt: 'Beneficiary operating an e-rickshaw supported through startup capital assistance.' },
+      { src: 'assets/images/galleries/startup/startup-2.jpg', alt: 'Small kiosk setup supported through AligsCare livelihood assistance.' },
+      { src: 'assets/images/galleries/startup/startup-3.jpg', alt: 'Beneficiary at a neighborhood shop restarted with startup support.' }
+    ]
+  },
+  rehabilitation: {
+    title: 'Rehabilitation & Economic Empowerment',
+    images: [
+      { src: 'assets/images/galleries/rehabilitation/rehab-3.jpg', alt: 'Walker and mobility support distribution to a patient family.' },
+      { src: 'assets/images/galleries/rehabilitation/rehab-4.jpg', alt: 'Post-treatment mobility support provided to a beneficiary in the community.' },
+      { src: 'assets/images/galleries/rehabilitation/rehab-5.jpg', alt: 'Rehabilitation assistance distribution event with patient families.' },
+      { src: 'assets/images/galleries/rehabilitation/rehab-6.jpg', alt: 'Community support handover as part of post-treatment rehabilitation assistance.' }
+    ]
   }
 };
 
@@ -2410,3 +2766,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
+
+
+
