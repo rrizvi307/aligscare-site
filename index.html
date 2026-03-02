@@ -241,7 +241,9 @@ img {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, #1C1C1C 0%, #2D1111 30%, #4A1515 60%, #8B1A1A 100%);
+  background:
+    linear-gradient(125deg, rgba(16, 16, 16, 0.8) 8%, rgba(64, 16, 16, 0.72) 52%, rgba(25, 10, 10, 0.8) 100%),
+    url('assets/images/hero-community.jpg') center center / cover no-repeat;
 }
 
 .hero::before {
@@ -300,6 +302,7 @@ img {
   max-width: 800px;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.35);
 }
 
 .hero h1 em {
@@ -309,10 +312,11 @@ img {
 
 .hero-sub {
   font-size: 1.15rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.86);
   max-width: 560px;
   line-height: 1.8;
   margin-bottom: 40px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
 .hero-ctas {
@@ -370,7 +374,7 @@ img {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 /* ==================== IMPACT NUMBERS STRIP ==================== */
@@ -440,6 +444,14 @@ img {
   border-radius: 12px;
   border-left: 4px solid var(--crimson);
   box-shadow: 0 4px 40px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.story-photo {
+  width: calc(100% + 80px);
+  margin: -40px -40px 28px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }
 
 .story-quote-block::before {
@@ -721,7 +733,9 @@ img {
 }
 
 .where-visual {
-  background: linear-gradient(135deg, var(--charcoal) 0%, #2D1111 50%, var(--crimson-dark) 100%);
+  background:
+    linear-gradient(160deg, rgba(24, 20, 18, 0.84) 8%, rgba(53, 16, 16, 0.76) 58%, rgba(28, 12, 12, 0.78) 100%),
+    url('assets/images/where-partner.jpg') center center / cover no-repeat;
   border-radius: 16px;
   padding: 48px;
   position: relative;
@@ -846,6 +860,8 @@ img {
   background: var(--white);
   border: 1px solid var(--border);
   transition: all 0.4s ease;
+  cursor: pointer;
+  outline: none;
 }
 
 .story-card:hover {
@@ -853,22 +869,42 @@ img {
   box-shadow: 0 12px 48px rgba(0,0,0,0.08);
 }
 
+.story-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201, 147, 58, 0.45), 0 12px 48px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
 .story-card-visual {
   height: 200px;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.story-card-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%);
 }
 
 .story-card-visual.ramadan {
-  background: linear-gradient(135deg, #1a3a2a 0%, #2d5a3d 50%, #C9933A 100%);
+  background-image:
+    linear-gradient(135deg, rgba(26, 58, 42, 0.55) 0%, rgba(45, 90, 61, 0.45) 60%, rgba(201, 147, 58, 0.32) 100%),
+    url('assets/images/story-ramadan.jpg');
 }
 
 .story-card-visual.winter {
-  background: linear-gradient(135deg, #1a2a3a 0%, #2d4a5a 50%, #4a7a9a 100%);
+  background-image:
+    linear-gradient(135deg, rgba(26, 42, 58, 0.62) 0%, rgba(45, 74, 90, 0.48) 60%, rgba(74, 122, 154, 0.26) 100%),
+    url('assets/images/story-winter.jpg');
 }
 
 .story-card-visual.awareness {
-  background: linear-gradient(135deg, #3a1a2a 0%, #5a2d3d 50%, #8B1A1A 100%);
+  background-image:
+    linear-gradient(135deg, rgba(58, 26, 42, 0.58) 0%, rgba(90, 45, 61, 0.46) 60%, rgba(139, 26, 26, 0.3) 100%),
+    url('assets/images/story-awareness.jpg');
 }
 
 .story-card-visual-label {
@@ -879,8 +915,9 @@ img {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: rgba(255,255,255,0.92);
   font-weight: 600;
+  z-index: 2;
 }
 
 .story-card-visual svg {
@@ -904,6 +941,15 @@ img {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+.story-card-action {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--crimson);
+  font-weight: 600;
 }
 
 /* ==================== ADDITIONAL PROGRAMS ==================== */
@@ -956,6 +1002,20 @@ img {
 
 .team-header .section-subtext {
   margin: 0 auto;
+}
+
+.team-feature {
+  margin-bottom: 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.team-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .team-group-label {
@@ -1046,6 +1106,127 @@ img {
 .advisor-chip span {
   color: var(--text-secondary);
   font-size: 0.75rem;
+}
+
+/* ==================== IMPACT GALLERY MODAL ==================== */
+body.modal-open {
+  overflow: hidden;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 12, 0.82);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.gallery-modal-panel {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #121212;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.45);
+  color: var(--white);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-modal-close:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.gallery-modal-image-wrap {
+  position: relative;
+  background: #0b0b0b;
+}
+
+.gallery-modal-image {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0,0,0,0.52);
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-modal-nav:hover {
+  background: rgba(0,0,0,0.75);
+}
+
+.gallery-modal-nav.prev {
+  left: 14px;
+}
+
+.gallery-modal-nav.next {
+  right: 14px;
+}
+
+.gallery-modal-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.92rem;
+}
+
+.gallery-modal-caption strong {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.68);
 }
 
 /* ==================== DONATE CTA ==================== */
@@ -1433,6 +1614,25 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .gallery-modal {
+    padding: 12px;
+  }
+
+  .gallery-modal-image {
+    max-height: 62vh;
+  }
+
+  .gallery-modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.35rem;
+  }
+
+  .gallery-modal-caption {
+    font-size: 0.85rem;
+    padding: 12px 14px;
+  }
+
   .hero-decor {
     display: none;
   }
@@ -1542,6 +1742,7 @@ img {
   <div class="container">
     <div class="story-grid">
       <div class="story-quote-block fade-in">
+        <img src="assets/images/story-founder.jpg" alt="Dr. Samina Salim with children supported through AligsCare programs in Aligarh." class="story-photo" loading="lazy">
         <blockquote class="story-quote">
           AligsCare was born from loss, and grief, but it is sustained from love, and it continues because of you. AligsCare was conceived in the quiet, overwhelming halls of MD Anderson Cancer Center, as I sat beside Asghar. Cancer is relentless. It exhausts the body, the spirit, and the family. Even with access to world-class care, the journey felt unimaginably hard. I remember thinking: If this is difficult for us, how much harder must it be for families in India who do not have access to these resources? That question turned into action and AligsCare was born.
         </blockquote>
@@ -1733,45 +1934,34 @@ img {
       <p class="section-subtext">Beyond the numbers — these are the programs our volunteers carry out in the wards, homes, and communities around JNMC.</p>
     </div>
     <div class="stories-grid">
-      <div class="story-card fade-in">
+      <div class="story-card fade-in" data-gallery="ramadan" tabindex="0" role="button" aria-label="Open Ramadan Drive photo gallery">
         <div class="story-card-visual ramadan">
           <div class="story-card-visual-label">Seasonal Program</div>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="25" stroke="white" stroke-width="1.5"/>
-            <path d="M45 25c-3 0-10 5-10 15s7 15 10 15" stroke="white" stroke-width="1.5"/>
-            <circle cx="52" cy="28" r="3" fill="white"/>
-          </svg>
         </div>
         <div class="story-card-body">
           <h3>Ramadan Drive</h3>
           <p>During each Ramadan, our Aligarh-based volunteers prepare and deliver ration kits directly to the bedsides of patients and their families at JNMC. These include food staples, supplies for iftar, and daily necessities — because a family keeping vigil in a hospital corridor still needs to eat.</p>
+          <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
-      <div class="story-card fade-in fade-in-delay-1">
+      <div class="story-card fade-in fade-in-delay-1" data-gallery="winter" tabindex="0" role="button" aria-label="Open Winter Drive photo gallery">
         <div class="story-card-visual winter">
           <div class="story-card-visual-label">Seasonal Program</div>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <path d="M40 15v50M25 25l30 30M25 55l30-30" stroke="white" stroke-width="1.5"/>
-            <circle cx="40" cy="40" r="5" stroke="white" stroke-width="1.5"/>
-          </svg>
         </div>
         <div class="story-card-body">
           <h3>Winter Drive</h3>
           <p>Aligarh winters are unforgiving — especially for patients weakened by treatment and families sleeping on hospital floors. Our Winter Drive provides blankets, shawls, and warm clothing to patients and caregivers who would otherwise face the cold without protection.</p>
+          <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
-      <div class="story-card fade-in fade-in-delay-2">
+      <div class="story-card fade-in fade-in-delay-2" data-gallery="awareness" tabindex="0" role="button" aria-label="Open Cancer Awareness Camps photo gallery">
         <div class="story-card-visual awareness">
           <div class="story-card-visual-label">Community Outreach</div>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="35" r="15" stroke="white" stroke-width="1.5"/>
-            <path d="M25 60c0-8 6.7-15 15-15s15 7 15 15" stroke="white" stroke-width="1.5"/>
-            <path d="M48 35l-12 0M42 29v12" stroke="white" stroke-width="1.5"/>
-          </svg>
         </div>
         <div class="story-card-body">
           <h3>Cancer Awareness Camps</h3>
           <p>In collaboration with AMU's Department of Social Work and local clinics in Barabanki and surrounding rural areas, we've conducted 15+ breast cancer awareness sessions. Early detection saves lives — and in communities where cancer is often diagnosed late, awareness is its own form of care.</p>
+          <div class="story-card-action">View photo gallery</div>
         </div>
       </div>
     </div>
@@ -1805,6 +1995,9 @@ img {
       <div class="section-label">Our People</div>
       <h2 class="section-heading">The Team Behind AligsCare</h2>
       <p class="section-subtext">A volunteer-driven organization, led by academics and professionals across the U.S. and a dedicated team on the ground in Aligarh.</p>
+    </div>
+    <div class="team-feature fade-in">
+      <img src="assets/images/team-feature.jpg" alt="AligsCare leadership and local partners in a program planning meeting at Aligarh." loading="lazy">
     </div>
 
     <div class="team-group-label fade-in">Board of Directors</div>
@@ -1966,6 +2159,22 @@ img {
   </div>
 </footer>
 
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+  <div class="gallery-modal-backdrop" data-gallery-close></div>
+  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+    <button class="gallery-modal-close" id="galleryCloseBtn" type="button" aria-label="Close gallery">&times;</button>
+    <div class="gallery-modal-image-wrap">
+      <button class="gallery-modal-nav prev" id="galleryPrevBtn" type="button" aria-label="Previous image">&#8249;</button>
+      <img class="gallery-modal-image" id="galleryImage" src="" alt="">
+      <button class="gallery-modal-nav next" id="galleryNextBtn" type="button" aria-label="Next image">&#8250;</button>
+    </div>
+    <div class="gallery-modal-caption">
+      <div><strong id="galleryTitle"></strong></div>
+      <div id="galleryCount"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 // ==================== NAVBAR SCROLL ====================
 const navbar = document.getElementById('navbar');
@@ -2049,6 +2258,133 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.impact-number').forEach(el => {
   counterObserver.observe(el);
+});
+
+// ==================== IMPACT STORY GALLERIES ====================
+const impactGalleries = {
+  ramadan: {
+    title: 'Ramadan Drive',
+    images: [
+      { src: 'assets/images/galleries/ramadan/ramadan-1.jpg', alt: 'Families and children sharing an AligsCare community Ramadan meal.' },
+      { src: 'assets/images/galleries/ramadan/ramadan-2.jpg', alt: 'AligsCare volunteers and community members gathered for Ramadan meal distribution.' },
+      { src: 'assets/images/galleries/ramadan/ramadan-3.jpg', alt: 'Prepared ration kits and rice bags arranged for Ramadan support.' },
+      { src: 'assets/images/galleries/ramadan/ramadan-4.jpg', alt: 'Ration kits lined up for Ramadan distribution by AligsCare volunteers.' },
+      { src: 'assets/images/galleries/ramadan/ramadan-5.jpg', alt: 'Close-up of Ramadan ration kits prepared for families in need.' }
+    ]
+  },
+  winter: {
+    title: 'Winter Drive',
+    images: [
+      { src: 'assets/images/galleries/winter/winter-1.jpg', alt: 'Vehicle loaded with blanket packs labeled for AligsCare Winter Drive.' },
+      { src: 'assets/images/galleries/winter/winter-2.jpg', alt: 'Blanket bundles stacked on transport for Winter Drive distribution.' },
+      { src: 'assets/images/galleries/winter/winter-3.jpg', alt: 'Winter relief packs prepared and labeled for delivery.' },
+      { src: 'assets/images/galleries/winter/winter-4.jpg', alt: 'Winter Drive registration and beneficiary support area.' },
+      { src: 'assets/images/galleries/winter/winter-5.jpg', alt: 'Beneficiary receiving Winter Drive support materials.' }
+    ]
+  },
+  awareness: {
+    title: 'Cancer Awareness Camps',
+    images: [
+      { src: 'assets/images/galleries/awareness/awareness-1.jpg', alt: 'Community awareness camp session led by AligsCare and local partners.' },
+      { src: 'assets/images/galleries/awareness/awareness-2.jpg', alt: 'Volunteer distributing awareness pamphlets to attendees.' },
+      { src: 'assets/images/galleries/awareness/awareness-3.jpg', alt: 'Educational awareness pamphlets used during breast cancer outreach.' },
+      { src: 'assets/images/galleries/awareness/awareness-4.jpg', alt: 'Audience participation during a cancer awareness community session.' },
+      { src: 'assets/images/galleries/awareness/awareness-5.jpg', alt: 'Attendees seated for awareness programming under event canopy.' },
+      { src: 'assets/images/galleries/awareness/awareness-6.jpg', alt: 'Indoor awareness meeting with community participants.' }
+    ]
+  }
+};
+
+const galleryModal = document.getElementById('galleryModal');
+const galleryImage = document.getElementById('galleryImage');
+const galleryTitle = document.getElementById('galleryTitle');
+const galleryCount = document.getElementById('galleryCount');
+const galleryCloseBtn = document.getElementById('galleryCloseBtn');
+const galleryPrevBtn = document.getElementById('galleryPrevBtn');
+const galleryNextBtn = document.getElementById('galleryNextBtn');
+const galleryTriggers = document.querySelectorAll('.story-card[data-gallery]');
+
+let activeGalleryKey = null;
+let activeGalleryIndex = 0;
+let lastFocusedElement = null;
+
+function renderGalleryImage() {
+  if (!activeGalleryKey || !impactGalleries[activeGalleryKey]) return;
+
+  const gallery = impactGalleries[activeGalleryKey];
+  const image = gallery.images[activeGalleryIndex];
+
+  galleryImage.src = image.src;
+  galleryImage.alt = image.alt;
+  galleryTitle.textContent = gallery.title;
+  galleryCount.textContent = (activeGalleryIndex + 1) + ' / ' + gallery.images.length;
+}
+
+function openGallery(galleryKey, imageIndex = 0) {
+  if (!impactGalleries[galleryKey]) return;
+
+  activeGalleryKey = galleryKey;
+  activeGalleryIndex = imageIndex;
+  lastFocusedElement = document.activeElement;
+
+  renderGalleryImage();
+  galleryModal.classList.add('open');
+  galleryModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  galleryCloseBtn.focus();
+}
+
+function closeGallery() {
+  galleryModal.classList.remove('open');
+  galleryModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  galleryImage.src = '';
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus();
+  }
+}
+
+function nextGalleryImage() {
+  if (!activeGalleryKey || !impactGalleries[activeGalleryKey]) return;
+  const count = impactGalleries[activeGalleryKey].images.length;
+  activeGalleryIndex = (activeGalleryIndex + 1) % count;
+  renderGalleryImage();
+}
+
+function prevGalleryImage() {
+  if (!activeGalleryKey || !impactGalleries[activeGalleryKey]) return;
+  const count = impactGalleries[activeGalleryKey].images.length;
+  activeGalleryIndex = (activeGalleryIndex - 1 + count) % count;
+  renderGalleryImage();
+}
+
+galleryTriggers.forEach(card => {
+  const key = card.dataset.gallery;
+  card.addEventListener('click', () => openGallery(key, 0));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openGallery(key, 0);
+    }
+  });
+});
+
+galleryCloseBtn.addEventListener('click', closeGallery);
+galleryPrevBtn.addEventListener('click', prevGalleryImage);
+galleryNextBtn.addEventListener('click', nextGalleryImage);
+
+galleryModal.addEventListener('click', (e) => {
+  if (e.target === galleryModal || e.target.hasAttribute('data-gallery-close')) {
+    closeGallery();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!galleryModal.classList.contains('open')) return;
+
+  if (e.key === 'Escape') closeGallery();
+  if (e.key === 'ArrowRight') nextGalleryImage();
+  if (e.key === 'ArrowLeft') prevGalleryImage();
 });
 
 // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
