@@ -1006,6 +1006,52 @@ img {
   font-weight: 600;
 }
 
+.ramadan-video-feature {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 36px;
+  align-items: center;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at top left, rgba(201, 147, 58, 0.2), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(245, 240, 235, 0.96) 100%);
+  box-shadow: 0 18px 60px rgba(28, 28, 28, 0.08);
+}
+
+.ramadan-video-copy h3 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.ramadan-video-copy p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.ramadan-video-copy p:last-of-type {
+  margin-bottom: 0;
+}
+
+.ramadan-video-frame {
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+
+.ramadan-video-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+
 /* ==================== ADDITIONAL PROGRAMS ==================== */
 .programs-extra {
   padding: 80px 0;
@@ -1670,6 +1716,10 @@ body.modal-open {
     gap: 48px;
   }
 
+  .ramadan-video-feature {
+    grid-template-columns: 1fr;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1720,6 +1770,11 @@ body.modal-open {
 
   .stories-grid {
     grid-template-columns: 1fr;
+  }
+
+  .ramadan-video-feature {
+    padding: 28px;
+    gap: 24px;
   }
 
   .donate-methods {
@@ -1826,6 +1881,11 @@ body.modal-open {
 
   .container {
     padding: 0 16px;
+  }
+
+  .ramadan-video-feature {
+    padding: 22px;
+    border-radius: 18px;
   }
 }
 </style>
@@ -2226,6 +2286,21 @@ body.modal-open {
           <p>AligsCare supports rehabilitation of patients in remission through economic empowerment and livelihood support so families can rebuild after treatment.</p>
           <div class="story-card-action">View photo gallery</div>
         </div>
+      </div>
+    </div>
+
+    <div class="ramadan-video-feature fade-in">
+      <div class="ramadan-video-copy">
+        <div class="section-label">Ramadan 2026</div>
+        <h3>See This Year's Ramadan Drive in Motion</h3>
+        <p>This video captures AligsCare volunteers preparing ration kits, loading supplies, and reaching patients and caregivers during the 2026 Ramadan drive in Aligarh.</p>
+        <p>Placed here alongside the Ramadan program highlights, it offers a direct view of the bedside and community support this seasonal effort makes possible.</p>
+      </div>
+      <div class="ramadan-video-frame">
+        <video class="ramadan-video-player" controls preload="none" poster="assets/images/story-ramadan.jpg">
+          <source src="assets/videos/ramadan-drive-2026.mp4" type="video/mp4">
+          Your browser does not support the video tag. Please <a href="assets/videos/ramadan-drive-2026.mp4">download the Ramadan Drive 2026 video</a>.
+        </video>
       </div>
     </div>
   </div>
@@ -2741,5 +2816,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
 
