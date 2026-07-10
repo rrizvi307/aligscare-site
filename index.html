@@ -1054,6 +1054,8 @@ img {
 
 .recent-videos {
   margin-top: 64px;
+  /* Increase this value if the Summer 2026 reels should render larger. */
+  --recent-video-width: 420px;
 }
 
 .recent-videos-header {
@@ -1074,15 +1076,16 @@ img {
 .recent-videos-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 32px;
+  align-items: start;
 }
 
 .recent-video-card {
-  display: grid;
-  grid-template-columns: minmax(150px, 0.62fr) minmax(0, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
   align-items: center;
-  padding: 24px;
+  padding: 32px;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--white);
@@ -1090,13 +1093,16 @@ img {
 }
 
 .recent-video-frame {
-  width: min(100%, 210px);
-  justify-self: center;
+  width: min(100%, var(--recent-video-width));
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid rgba(28, 28, 28, 0.08);
   background: #000;
   box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+}
+
+.recent-video-copy {
+  width: min(100%, var(--recent-video-width));
 }
 
 .recent-video-player {
@@ -1799,6 +1805,10 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .recent-videos {
+    --recent-video-width: 460px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1854,10 +1864,6 @@ body.modal-open {
   .ramadan-video-feature {
     padding: 28px;
     gap: 24px;
-  }
-
-  .recent-video-card {
-    grid-template-columns: minmax(150px, 0.52fr) minmax(0, 1fr);
   }
 
   .donate-methods {
@@ -1972,12 +1978,7 @@ body.modal-open {
   }
 
   .recent-video-card {
-    grid-template-columns: 1fr;
     padding: 18px;
-  }
-
-  .recent-video-frame {
-    width: min(100%, 240px);
   }
 }
 </style>
