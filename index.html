@@ -1052,6 +1052,81 @@ img {
   background: #000;
 }
 
+.recent-videos {
+  margin-top: 64px;
+}
+
+.recent-videos-header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.recent-videos-header h3 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  margin-bottom: 14px;
+}
+
+.recent-videos-header p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.recent-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.recent-video-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.62fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: 0 12px 42px rgba(28, 28, 28, 0.06);
+}
+
+.recent-video-frame {
+  width: min(100%, 210px);
+  justify-self: center;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  background: #000;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+}
+
+.recent-video-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  object-fit: cover;
+}
+
+.recent-video-kicker {
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.recent-video-copy h4 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.recent-video-copy p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
 /* ==================== ADDITIONAL PROGRAMS ==================== */
 .programs-extra {
   padding: 80px 0;
@@ -1720,6 +1795,10 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .recent-videos-grid {
+    grid-template-columns: 1fr;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1775,6 +1854,10 @@ body.modal-open {
   .ramadan-video-feature {
     padding: 28px;
     gap: 24px;
+  }
+
+  .recent-video-card {
+    grid-template-columns: minmax(150px, 0.52fr) minmax(0, 1fr);
   }
 
   .donate-methods {
@@ -1886,6 +1969,15 @@ body.modal-open {
   .ramadan-video-feature {
     padding: 22px;
     border-radius: 18px;
+  }
+
+  .recent-video-card {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .recent-video-frame {
+    width: min(100%, 240px);
   }
 }
 </style>
@@ -2301,6 +2393,43 @@ body.modal-open {
           <source src="assets/videos/ramadan-drive-2026.mp4" type="video/mp4">
           Your browser does not support the video tag. Please <a href="assets/videos/ramadan-drive-2026.mp4">download the Ramadan Drive 2026 video</a>.
         </video>
+      </div>
+    </div>
+
+    <div class="recent-videos fade-in" aria-labelledby="recent-videos-title">
+      <div class="recent-videos-header">
+        <div class="section-label">Summer 2026</div>
+        <h3 id="recent-videos-title">Recent Field Videos</h3>
+        <p>Two new reels from Aligarh show how seasonal remembrance and community gatherings become direct care for patients, caregivers, and families.</p>
+      </div>
+      <div class="recent-videos-grid">
+        <article class="recent-video-card">
+          <div class="recent-video-frame">
+            <video class="recent-video-player" controls playsinline preload="none" poster="assets/images/poster-eid-ul-adha-2026.jpg">
+              <source src="assets/videos/7:10:26%20vids/VIDEO-2026-07-07-11-38-43.mp4" type="video/mp4">
+              Your browser does not support the video tag. Please <a href="assets/videos/7:10:26%20vids/VIDEO-2026-07-07-11-38-43.mp4">download the Eid ul Adha community care video</a>.
+            </video>
+          </div>
+          <div class="recent-video-copy">
+            <div class="recent-video-kicker">Eid ul Adha</div>
+            <h4>Eid ul Adha Community Care</h4>
+            <p>A summer reel from AligsCare's Eid ul Adha gathering and hospital-side support, showing volunteers alongside patients, families, and care teams in Aligarh.</p>
+          </div>
+        </article>
+
+        <article class="recent-video-card">
+          <div class="recent-video-frame">
+            <video class="recent-video-player" controls playsinline preload="none" poster="assets/images/poster-muharram-sabeel-2026.jpg">
+              <source src="assets/videos/7:10:26%20vids/VIDEO-2026-07-07-11-35-37.mp4" type="video/mp4">
+              Your browser does not support the video tag. Please <a href="assets/videos/7:10:26%20vids/VIDEO-2026-07-07-11-35-37.mp4">download the Muharram Sabeel video</a>.
+            </video>
+          </div>
+          <div class="recent-video-copy">
+            <div class="recent-video-kicker">Muharram Sabeel</div>
+            <h4>Refreshing Drinks, Shade, and Remembrance</h4>
+            <p>In the spirit of Karbala, AligsCare volunteers served refreshing drinks and shade to patients and caregivers. Every cup offered was an act of compassion and remembrance.</p>
+          </div>
+        </article>
       </div>
     </div>
   </div>
@@ -2816,4 +2945,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
